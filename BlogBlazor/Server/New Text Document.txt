@@ -1,0 +1,1 @@
+Scaffold-DbContext “Server=192.168.41.39;Database=Library;TrustServerCertificate=True;user id=sa;password=Pa`$`$0123” Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models

@@ -1,0 +1,52 @@
+﻿@page "/fetchdata2"
+@using BlogBlazor.Shared;
+
+@inject HttpClient Http
+
+<PageTitle>Weather forecast</PageTitle>
+
+<h1>Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+@if (Book == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Author</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in Book)
+            {
+                <tr>
+                    <td>@book.Id</td>
+                    <td>@book.Name</td>
+                    <td>@book.Author</td>
+                    <td>@book.Quantity</td>
+                    <td>@book.Price</td>
+                    <td>@book.Quantity</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private Book[]? Book;
+
+    protected override async Task OnInitializedAsync()
+    {
+        Book = await Http.GetFromJsonAsync<Book[]>("api/Books");
+    }
+}
