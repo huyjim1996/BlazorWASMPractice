@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Client\BlogBlazor.Client.csproj" />
+    <ProjectReference Include="..\SERVICE\SERVICE.csproj" />
     <ProjectReference Include="..\Shared\BlogBlazor.Shared.csproj" />
   </ItemGroup>
 

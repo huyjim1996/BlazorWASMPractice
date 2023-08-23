@@ -1,0 +1,48 @@
+﻿@page "/employee"
+@using BlogBlazor.Shared.ModelEF;
+
+@inject HttpClient Http
+
+<PageTitle>Employee List</PageTitle>
+
+
+@if (employees == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>DateOfBirth</th>
+                <th>Department</th>
+                <th>Position</th>               
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var employee in employees)
+            {
+                <tr>
+                    <td>@employee.Id</td>
+                    <td>@employee.Name</td>
+                    <td>@employee.DateOfBirth</td>
+                    <td>@employee.Department</td>
+                    <td>@employee.Position</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+  
+}
+
+@code {
+    private BlogBlazor.Shared.ModelEF.Employee[]? employees;
+
+    protected override async Task OnInitializedAsync()
+    {
+        employees = await Http.GetFromJsonAsync<BlogBlazor.Shared.ModelEF.Employee[]>("api/Employee");
+    }
+}

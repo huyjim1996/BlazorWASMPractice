@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogBlazor.Server", "Server
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogBlazor.Shared", "Shared\BlogBlazor.Shared.csproj", "{A823BB32-9456-43CE-8300-FFE1FB94E178}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SERVICE", "SERVICE\SERVICE.csproj", "{170BFD23-F5AE-4621-B094-EF0A4A8112A4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{A823BB32-9456-43CE-8300-FFE1FB94E178}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A823BB32-9456-43CE-8300-FFE1FB94E178}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A823BB32-9456-43CE-8300-FFE1FB94E178}.Release|Any CPU.Build.0 = Release|Any CPU
+		{170BFD23-F5AE-4621-B094-EF0A4A8112A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{170BFD23-F5AE-4621-B094-EF0A4A8112A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{170BFD23-F5AE-4621-B094-EF0A4A8112A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{170BFD23-F5AE-4621-B094-EF0A4A8112A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
