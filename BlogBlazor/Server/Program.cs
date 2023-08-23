@@ -1,7 +1,6 @@
-using BlogBlazor.Server.Models;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
-
+using BlogBlazor.Shared.Data;
 namespace BlogBlazor
 {
     public class Program
@@ -14,7 +13,7 @@ namespace BlogBlazor
 
             builder.Services.AddControllersWithViews();
             builder.Services.AddRazorPages();
-            builder.Services.AddDbContext<LibraryContext>(options =>
+            builder.Services.AddDbContext<MasterContext>(options =>
    options.UseSqlServer(builder.Configuration.GetConnectionString("SchoolContext")));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
@@ -37,9 +36,9 @@ namespace BlogBlazor
             {
                 var services = scope.ServiceProvider;
 
-                var context = services.GetRequiredService<LibraryContext>();
+                var context = services.GetRequiredService<MasterContext>();
                 context.Database.EnsureCreated();
-                // DbInitializer.Initialize(context);
+                
             }
 
             app.UseHttpsRedirection();
